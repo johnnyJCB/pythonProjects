@@ -17,7 +17,7 @@ def grocery_list_challenge():
                 break  # Exit loop "done"
             else:
                 groceries.append(item)  # Add the item to list
-                print("Current groceries list:", groceries)  # Print current list
+                print("Current groceries list:", groceries)  # print current list
     else:
         print("Remove items from your groceries list:")
         while True:
@@ -27,11 +27,14 @@ def grocery_list_challenge():
             else:
                 if item in groceries:
                     groceries.remove(item)
-                    print("Current groceries list:", groceries)  # Print current list
+                    print("Current groceries list:", groceries)  # print current list
                 else:
                     print("Item not found in the groceries list.")  # item not in list
 
     print("Final groceries list:", groceries)
+    
+    with open("GroceryList", "w") as file:      # save list
+        file.write("\n".join(groceries))
 
 
 if __name__ == "__main__":
